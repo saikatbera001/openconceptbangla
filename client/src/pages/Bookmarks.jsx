@@ -16,13 +16,13 @@ export default function Bookmarks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <Link to="/blogs" className="inline-flex items-center gap-1 text-xs font-semibold text-brand-700 mb-2">
               <ArrowLeft className="w-3.5 h-3.5" /> সকল ব্লগে ফিরে যান
             </Link>
             <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 font-bengali flex items-center gap-2">
-              <Bookmark className="w-7 h-7 text-accent fill-accent" />
+              <Bookmark className="w-6 h-6 sm:w-7 sm:h-7 text-accent fill-accent shrink-0" />
               <span>আমার সংরক্ষিত পোস্টসমূহ</span>
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 mt-1">
@@ -30,7 +30,7 @@ export default function Bookmarks() {
             </p>
           </div>
 
-          <span className="text-xs font-bold bg-brand-50 text-brand-700 px-3 py-1.5 rounded-full">
+          <span className="self-start sm:self-auto text-xs font-bold bg-brand-50 text-brand-700 px-3 py-1.5 rounded-full whitespace-nowrap">
             মোট {savedPosts.length}টি সংরক্ষিত
           </span>
         </div>

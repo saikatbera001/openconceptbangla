@@ -86,9 +86,9 @@ export default function FeaturedPosts() {
               <Link
                 key={post.id}
                 to={`/blog/${post.slug}`}
-                className="group p-4 sm:p-5 bg-slate-50 hover:bg-emerald-50/50 rounded-2xl border border-slate-200 hover:border-emerald-400 transition-all flex flex-col sm:flex-row gap-4 items-center justify-between"
+                className="group p-3.5 sm:p-5 bg-slate-50 hover:bg-emerald-50/50 rounded-2xl border border-slate-200 hover:border-emerald-400 transition-all flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center justify-between"
               >
-                <div className="w-full sm:w-36 h-28 shrink-0 rounded-xl overflow-hidden bg-slate-200">
+                <div className="w-full sm:w-36 h-36 sm:h-28 shrink-0 rounded-xl overflow-hidden bg-slate-200">
                   <img
                     src={post.featuredImage}
                     alt={post.title}
@@ -111,15 +111,15 @@ export default function FeaturedPosts() {
             ))}
 
             {/* Quick Promo Banner */}
-            <div className="p-5 rounded-2xl bg-gradient-to-r from-darkgreen to-emerald-900 text-white flex items-center justify-between shadow-md">
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-darkgreen to-emerald-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 shadow-md">
               <div>
                 <p className="text-xs text-accent font-bold">দরকারী অনলাইন সাহায্য</p>
-                <h4 className="text-lg font-bold font-bengali">ফরম ফিলাপে ছবির সাইজ নিয়ে সমস্যা?</h4>
-                <p className="text-xs text-emerald-200">অনলাইনে ১০০% ফ্রিতে ছবির সাইজ ও স্বাক্ষর রিসাইজ করুন</p>
+                <h4 className="text-base sm:text-lg font-bold font-bengali">ফরম ফিলাপে ছবির সাইজ নিয়ে সমস্যা?</h4>
+                <p className="text-xs text-emerald-200 mt-0.5">অনলাইনে ১০০% ফ্রিতে ছবির সাইজ ও স্বাক্ষর রিসাইজ করুন</p>
               </div>
               <Link
                 to="/tools"
-                className="px-4 py-2 bg-accent hover:bg-accent-hover text-slate-900 font-bold rounded-xl text-xs shrink-0 shadow transition"
+                className="self-start sm:self-auto px-4 py-2 bg-accent hover:bg-accent-hover text-slate-950 font-bold rounded-xl text-xs shrink-0 shadow transition"
               >
                 টুল খুলুন
               </Link>

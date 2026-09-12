@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Upload, Download, FileImage, ShieldCheck, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { Download, FileImage, ShieldCheck, RefreshCw, CheckCircle2 } from 'lucide-react';
 
 export default function ImageConverter() {
   const [imageSrc, setImageSrc] = useState(null);
@@ -60,7 +60,7 @@ export default function ImageConverter() {
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-8">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-6 border-b border-slate-100 gap-4">
         <div>
           <div className="inline-flex items-center gap-1 text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full text-xs font-bold mb-2">
@@ -119,7 +119,7 @@ export default function ImageConverter() {
             <label className="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-2">
               টার্গেট ফরম্যাট সিলেক্ট করুন:
             </label>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
               {[
                 { id: 'image/png', label: 'PNG ফরম্যাট', desc: 'স্বচ্ছ ব্যাকগ্রাউন্ড ও হাই কোয়ালিটি' },
                 { id: 'image/jpeg', label: 'JPG / JPEG ফরম্যাট', desc: 'ফর্ম ফিলাপ ও ডকুমেন্টস' },
@@ -135,7 +135,7 @@ export default function ImageConverter() {
                   }`}
                 >
                   <p className="font-bold text-xs">{fmt.label}</p>
-                  <p className="text-[10px] text-slate-500">{fmt.desc}</p>
+                  <p className="text-[10px] text-slate-500 mt-0.5">{fmt.desc}</p>
                 </button>
               ))}
             </div>

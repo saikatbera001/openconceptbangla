@@ -109,7 +109,7 @@ export default function BlogDetail() {
         </div>
 
         {/* Main Content Box */}
-        <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden p-6 sm:p-10 mb-10">
+        <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden p-4 sm:p-10 mb-8 sm:mb-10">
           
           {/* Header Info */}
           <div className="mb-6">
@@ -193,7 +193,7 @@ export default function BlogDetail() {
           )}
 
           {/* Social Share & Action Bar */}
-          <div className="mt-8 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             
             {/* Like & Bookmark */}
             <div className="flex items-center gap-3">
@@ -252,7 +252,7 @@ export default function BlogDetail() {
         </div>
 
         {/* Comments Section */}
-        <section className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 mb-10">
+        <section className="bg-white rounded-3xl border border-slate-200 shadow-sm p-4 sm:p-8 mb-8 sm:mb-10">
           <div className="flex items-center gap-2 mb-6 pb-3 border-b border-slate-100">
             <MessageSquare className="w-5 h-5 text-brand-600" />
             <h3 className="text-xl font-bold text-slate-900 font-bengali">

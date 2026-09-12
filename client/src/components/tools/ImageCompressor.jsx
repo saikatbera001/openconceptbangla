@@ -110,7 +110,7 @@ export default function ImageCompressor() {
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-8">
       {/* Tool Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-6 border-b border-slate-100 gap-4">
         <div>
@@ -129,7 +129,7 @@ export default function ImageCompressor() {
         {selectedImage && (
           <button
             onClick={handleReset}
-            className="flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-red-600 bg-slate-100 hover:bg-red-50 px-3.5 py-2 rounded-xl transition"
+            className="flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-red-600 bg-slate-100 hover:bg-red-50 px-3.5 py-2 rounded-xl transition self-start sm:self-auto"
           >
             <RefreshCw className="w-3.5 h-3.5" /> নতুন ছবি
           </button>
@@ -141,7 +141,7 @@ export default function ImageCompressor() {
         /* Upload Area */
         <div
           onClick={() => fileInputRef.current?.click()}
-          className="border-2 border-dashed border-emerald-300 hover:border-brand-600 bg-emerald-50/30 hover:bg-emerald-50/70 rounded-2xl p-12 text-center cursor-pointer transition-all flex flex-col items-center justify-center space-y-4"
+          className="border-2 border-dashed border-emerald-300 hover:border-brand-600 bg-emerald-50/30 hover:bg-emerald-50/70 rounded-2xl p-8 sm:p-12 text-center cursor-pointer transition-all flex flex-col items-center justify-center space-y-4"
         >
           <input
             type="file"
@@ -167,26 +167,26 @@ export default function ImageCompressor() {
         </div>
       ) : (
         /* Compression Controls & Comparison */
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           
           {/* Target Size Selector */}
-          <div className="p-5 bg-slate-50 rounded-2xl border border-slate-200">
-            <div className="flex items-center justify-between mb-3">
+          <div className="p-4 sm:p-5 bg-slate-50 rounded-2xl border border-slate-200">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-1">
               <label className="text-sm font-bold text-slate-800 flex items-center gap-2">
                 <Sliders className="w-4 h-4 text-brand-600" />
-                <span>টার্গেট সাইজ সিলেক্ট করুন:</span>
+                <span>টার্গেট সাইজ:</span>
                 <span className="text-brand-700 font-black">{targetKb} KB</span>
               </label>
               <span className="text-xs text-slate-400">সরকারি চাকরির স্ট্যান্ডার্ড সাইজ</span>
             </div>
 
             {/* Quick Preset Buttons */}
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-4">
+            <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 mb-4">
               {[20, 50, 100, 150, 200].map((kb) => (
                 <button
                   key={kb}
                   onClick={() => handleTargetChange(kb)}
-                  className={`py-2 px-3 rounded-xl text-xs font-bold transition ${
+                  className={`py-2 px-2.5 rounded-xl text-xs font-bold transition ${
                     targetKb === kb
                       ? 'bg-brand-700 text-white shadow-md'
                       : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
@@ -261,10 +261,10 @@ export default function ImageCompressor() {
                 <a
                   href={compressedBlobUrl}
                   download={`compressed_${targetKb}kb_${originalFile?.name || 'photo.jpg'}`}
-                  className="w-full mt-4 py-3 bg-brand-700 hover:bg-brand-800 text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-brand-700/20 transition active:scale-95"
+                  className="w-full mt-4 py-3 px-3 bg-brand-700 hover:bg-brand-800 text-white font-bold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-brand-700/20 transition active:scale-95 text-center"
                 >
-                  <Download className="w-4 h-4" />
-                  <span>কম্প্রেসড ছবি ডাউনলোড করুন ({compressedSizeKb} KB)</span>
+                  <Download className="w-4 h-4 shrink-0" />
+                  <span>ছবি ডাউনলোড করুন ({compressedSizeKb} KB)</span>
                 </a>
               )}
             </div>

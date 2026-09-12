@@ -85,9 +85,11 @@ export default function Blogs() {
             </div>
 
             {/* Sort Dropdown */}
-            <div className="flex items-center gap-2 w-full md:w-auto justify-end text-xs font-semibold text-slate-600">
-              <Filter className="w-4 h-4 text-slate-400" />
-              <span>বাছাই করুন:</span>
+            <div className="flex items-center gap-2 w-full md:w-auto justify-between md:justify-end text-xs font-semibold text-slate-600">
+              <div className="flex items-center gap-1.5">
+                <Filter className="w-4 h-4 text-slate-400" />
+                <span>বাছাই করুন:</span>
+              </div>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
@@ -100,7 +102,7 @@ export default function Blogs() {
           </div>
 
           {/* Category Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 text-xs">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 text-xs no-scrollbar">
             <button
               onClick={() => handleCategorySelect('all')}
               className={`px-3.5 py-1.5 rounded-xl font-bold whitespace-nowrap transition ${

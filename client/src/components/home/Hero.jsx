@@ -45,21 +45,22 @@ export default function Hero() {
 
         {/* Prominent Search Bar */}
         <div className="max-w-2xl mx-auto mb-6">
-          <form onSubmit={handleSearch} className="relative flex items-center shadow-2xl rounded-2xl overflow-hidden bg-white/10 backdrop-blur-md p-1.5 border border-emerald-500/40 focus-within:border-accent transition-all">
-            <Search className="w-6 h-6 text-emerald-300 ml-3 shrink-0" />
+          <form onSubmit={handleSearch} className="relative flex items-center shadow-2xl rounded-2xl overflow-hidden bg-white/10 backdrop-blur-md p-1 sm:p-1.5 border border-emerald-500/40 focus-within:border-accent transition-all">
+            <Search className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-300 ml-2.5 sm:ml-3 shrink-0" />
             <input
               type="text"
-              placeholder="যেকোনো তথ্য বা সেবা খুঁজুন (যেমন: লক্ষ্মীর ভাণ্ডার, ভোটার কার্ড, ফটো কম্প্রেসার)..."
+              placeholder="যেকোনো তথ্য বা সেবা খুঁজুন..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full py-3.5 px-4 bg-transparent text-white placeholder-emerald-200/70 text-sm sm:text-base focus:outline-none"
+              className="w-full py-2.5 sm:py-3.5 px-2.5 sm:px-4 bg-transparent text-white placeholder-emerald-200/70 text-xs sm:text-base focus:outline-none min-w-0"
             />
             <button
               type="submit"
-              className="bg-accent hover:bg-accent-hover text-slate-950 font-bold px-6 py-3.5 rounded-xl text-sm flex items-center gap-1.5 shrink-0 transition-transform active:scale-95 shadow-md"
+              className="bg-accent hover:bg-accent-hover text-slate-950 font-bold px-3.5 sm:px-6 py-2.5 sm:py-3.5 rounded-xl text-xs sm:text-sm flex items-center gap-1 sm:gap-1.5 shrink-0 transition-transform active:scale-95 shadow-md"
+              aria-label="অনুসন্ধান"
             >
               <span>খুঁজুন</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
           </form>
         </div>
