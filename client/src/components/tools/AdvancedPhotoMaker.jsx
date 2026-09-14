@@ -314,32 +314,32 @@ export default function AdvancedPhotoMaker() {
                 <Upload className="w-7 h-7" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-slate-800">
-                  {imageSrc ? 'নতুন ছবি পরিবর্তন করতে ক্লিক করুন' : 'Upload Photo'}
+                <h3 className="text-base font-bold text-slate-800 font-sans">
+                  {imageSrc ? 'Click to change photo' : 'Upload Photo'}
                 </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  JPG / PNG / WebP — কাস্টম সাইজ ক্রপ ও গ্রিড মেকার
+                <p className="text-xs text-slate-500 mt-1 font-sans">
+                  JPG / PNG / WebP — Custom size crop & grid maker
                 </p>
               </div>
               <button
                 type="button"
-                className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl shadow transition"
+                className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl shadow transition font-sans"
               >
-                {imageSrc ? 'ছবি বদলান' : 'ছবি নির্বাচন করুন'}
+                {imageSrc ? 'Change Photo' : 'Select Photo'}
               </button>
             </div>
 
             {/* Dimension Inputs */}
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3 font-sans">
               <label className="text-xs font-bold text-slate-700 flex items-center gap-1.5 uppercase tracking-wider">
                 <Sliders className="w-3.5 h-3.5 text-emerald-600" />
-                <span>কাস্টম সাইজ ও রেজোলিউশন ({unit.toUpperCase()}):</span>
+                <span>Custom Size & Resolution ({unit.toUpperCase()}):</span>
               </label>
 
               <div className="grid grid-cols-3 gap-3">
                 <div>
                   <span className="text-[11px] text-slate-500 font-semibold block mb-1">
-                    প্রস্থ (Width):
+                    Width:
                   </span>
                   <div className="relative">
                     <input
@@ -357,7 +357,7 @@ export default function AdvancedPhotoMaker() {
 
                 <div>
                   <span className="text-[11px] text-slate-500 font-semibold block mb-1">
-                    উচ্চতা (Height):
+                    Height:
                   </span>
                   <div className="relative">
                     <input
@@ -375,7 +375,7 @@ export default function AdvancedPhotoMaker() {
 
                 <div>
                   <span className="text-[11px] text-slate-500 font-semibold block mb-1">
-                    প্রিন্ট DPI:
+                    Print DPI:
                   </span>
                   <select
                     value={dpiVal}
@@ -399,7 +399,7 @@ export default function AdvancedPhotoMaker() {
                     onChange={(e) => setBorderLine(e.target.checked)}
                     className="rounded text-emerald-600 focus:ring-emerald-500 w-4 h-4"
                   />
-                  <span>কাটিং বর্ডার আউটলাইন যোগ করুন</span>
+                  <span>Add cutting border outline</span>
                 </label>
               </div>
             </div>
@@ -407,7 +407,7 @@ export default function AdvancedPhotoMaker() {
           </div>
 
           {/* Right Live Dark Canvas Preview */}
-          <div className="lg:col-span-6 bg-slate-950 rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-between min-h-[380px] border border-slate-800 shadow-2xl">
+          <div className="lg:col-span-6 bg-slate-950 rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-between min-h-[380px] border border-slate-800 shadow-2xl font-sans">
             <div className="w-full flex items-center justify-between text-xs text-slate-400 pb-3 border-b border-slate-800">
               <span className="flex items-center gap-1.5 font-bold text-slate-200">
                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
@@ -434,10 +434,10 @@ export default function AdvancedPhotoMaker() {
                 <div className="h-56 w-full border-2 border-dashed border-slate-800 rounded-xl flex flex-col items-center justify-center text-center p-6 text-slate-500">
                   <Crop className="w-10 h-10 text-slate-600 mb-2" />
                   <p className="text-xs font-semibold text-slate-400">
-                    Crop template er live preview ekhane dekhabe
+                    Crop template live preview will display here
                   </p>
                   <p className="text-[11px] text-slate-600 mt-1 max-w-xs">
-                    ছবি আপলোড করার পর মাউস দিয়ে ছবিকে ড্র্যাগ ও জুম করে মনের মতো সেট করতে পারবেন।
+                    After uploading, click and drag with your mouse to zoom and position the photo.
                   </p>
                 </div>
               )}
@@ -472,21 +472,21 @@ export default function AdvancedPhotoMaker() {
                   }}
                   className="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-[10px] rounded-lg transition font-semibold"
                 >
-                  রিসেট
+                  Reset
                 </button>
               </div>
             )}
 
             {/* Helper text */}
             <p className="text-[11px] text-slate-400 text-center">
-              ছবির উপর মাউস চেপে ধরে ইচ্ছামতো পজিশন অ্যাডজাস্ট করুন।
+              Click and drag mouse over image to adjust position freely.
             </p>
           </div>
 
         </div>
 
-        {/* 4x6 & A4 Output Action Blocks (Matching Screenshot 2) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4 border-t border-slate-100">
+        {/* 4x6 & A4 Output Action Blocks */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4 border-t border-slate-100 font-sans">
           
           {/* 4 x 6 Page Output Box */}
           <div className="p-5 bg-gradient-to-br from-indigo-50/60 to-purple-50/60 rounded-2xl border border-indigo-200/80 flex flex-col justify-between space-y-4">
@@ -501,7 +501,7 @@ export default function AdvancedPhotoMaker() {
                 </span>
               </div>
               <p className="text-xs text-slate-600">
-                How many photos? (১ থেকে ১৬ টি ফটো ৪x৬ পেপারে এক সাথে প্রিন্ট করুন)
+                How many photos? (Print 1 to 16 photos together on 4x6 paper)
               </p>
             </div>
 
@@ -527,7 +527,7 @@ export default function AdvancedPhotoMaker() {
               </button>
             </div>
             <span className="text-[10px] text-slate-400">
-              Crop template er anujaye photo count neon ebong download korun
+              Select photo count and click download to get standard 4x6 sheet
             </span>
           </div>
 
@@ -544,7 +544,7 @@ export default function AdvancedPhotoMaker() {
                 </span>
               </div>
               <p className="text-xs text-slate-600">
-                How many photos? (১ থেকে ৩২ টি ফটো A4 শিটে সম্পূর্ণ মাপ অনুযায়ী সাজিয়ে নিন)
+                How many photos? (Print 1 to 32 photos arranged on full A4 sheet)
               </p>
             </div>
 
@@ -570,11 +570,12 @@ export default function AdvancedPhotoMaker() {
               </button>
             </div>
             <span className="text-[10px] text-slate-400">
-              Crop template er anujaye photo count neon ebong download korun
+              Select photo count and click download to get full A4 sheet
             </span>
           </div>
 
         </div>
+
 
       </div>
     </div>

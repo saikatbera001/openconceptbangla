@@ -2,317 +2,317 @@ export const QUICK_TOOLS_CATALOG = [
   {
     id: "passport-photo-maker",
     title: "Passport Photo Maker",
-    titleBn: "পাসপোর্ট সাইজ ফটো মেকার",
+    titleBn: "Official Passport & Visa Photo",
     subtitle: "35x45mm / 2.5x3.5cm / 2x2 inch",
     category: "photo",
     badge: "Most Used",
     color: "rose",
     defaultWidth: 350,
     defaultHeight: 450,
-    description: "ভারতের অফিসিয়াল পাসপোর্ট (3.5x4.5 cm) এবং ভিসা সাইজের ছবি তৈরি করুন।"
+    description: "Generate standard Indian passport (3.5x4.5 cm) and international visa photo sizes instantly."
   },
   {
     id: "reduce-image-kb",
     title: "Reduce Image Size in KB",
-    titleBn: "ছবির সাইজ কমান (KB রিডিউসার)",
+    titleBn: "Compress Target File Size",
     subtitle: "Compress to target KB",
     category: "compress",
     badge: "100% Offline",
     color: "amber",
     targetKb: 50,
-    description: "ছবির মান বজায় রেখে ১০KB, ২০KB, ৫০KB বা ১০০KB-তে কম্প্রেস করুন।"
+    description: "Compress image file size to exact 10KB, 20KB, 50KB, or 100KB while preserving visual clarity."
   },
   {
     id: "resize-pixel",
     title: "Resize Image Pixel",
-    titleBn: "পিক্সেল অনুযায়ী সাইজ পরিবর্তন",
+    titleBn: "Custom Pixel Dimensions",
     subtitle: "Set width x height",
     category: "resize",
     badge: "Exact Pixel",
     color: "blue",
-    description: "ফর্ম ফিলাপের নির্ধারিত প্রস্থ ও উচ্চতা (Width x Height) পিক্সেলে সেট করুন।"
+    description: "Set exact custom width and height in pixels required for online job and admission application portals."
   },
   {
     id: "resize-signature",
     title: "Resize Signature",
-    titleBn: "অফিসিয়াল স্বাক্ষর সাইজার",
+    titleBn: "Exam & Form Signature Box",
     subtitle: "6x2cm or custom size",
     category: "signature",
     badge: "Govt Forms",
     color: "purple",
     defaultWidth: 280,
     defaultHeight: 120,
-    description: "সরকারি পরীক্ষার অনলাইন আবেদনের জন্য সিগনেচার ১৪০x৬০ বা ৬x২ সেমিতে ক্রপ করুন।"
+    description: "Crop and resize official signatures to 140x60 or 6x2 cm standard boxes for online portal verification."
   },
   {
     id: "increase-image-kb",
     title: "Increase Image Size in KB",
-    titleBn: "ছবির সাইজ বৃদ্ধি করুন (KB)",
+    titleBn: "File Size Booster",
     subtitle: "Increase file to target KB",
     category: "compress",
     badge: "Size Booster",
     color: "emerald",
     targetKb: 100,
-    description: "খুব ছোট সাইজের ছবির ফাইল সাইজ বাড়িয়ে পোর্টালের ন্যূনতম চাহিদা পূরণ করুন।"
+    description: "Increase file size for images that are too small to meet minimum portal upload requirements."
   },
   {
     id: "image-converter",
     title: "Image Converter",
-    titleBn: "ইমেজ ফরম্যাট কনভার্টার",
+    titleBn: "JPG / PNG / WebP Converter",
     subtitle: "JPG / PNG / WebP",
     category: "convert",
     badge: "Fast",
     color: "cyan",
-    description: "ছবির কোয়ালিটি না হারিয়ে JPG, PNG অথবা আধুনিক WebP ফরম্যাটে পরিবর্তন করুন।"
+    description: "Convert images seamlessly between JPG, PNG, and next-gen WebP formats without quality loss."
   },
   {
     id: "crop-image",
     title: "Crop Image",
-    titleBn: "ইমেজ ফ্রি ক্রপ",
+    titleBn: "Visual Freehand Crop",
     subtitle: "Free visual crop",
     category: "crop",
     badge: "Visual",
     color: "red",
-    description: "মাউস দিয়ে ইচ্ছামতো ছবির যেকোনো অংশ ক্রপ করে কেটে নিন।"
+    description: "Crop any portion of your photos or documents freely with an intuitive visual bounding box."
   },
   {
     id: "rotate-image",
     title: "Rotate Image",
-    titleBn: "ছবি ঘোরান (Rotate)",
+    titleBn: "90° / 180° / 270° Orientation",
     subtitle: "90° / 180° / 270°",
     category: "edit",
     badge: "Any Angle",
     color: "indigo",
-    description: "বাঁকা হয়ে থাকা ছবি বা ডকুমেন্টসকে ঘড়ির কাঁটার দিকে বা বিপরীতে ঘোরান।"
+    description: "Rotate scanned documents or tilted photographs clockwise or counter-clockwise."
   },
   {
     id: "flip-image",
     title: "Flip Image",
-    titleBn: "ছবি ফ্লিপ (Flip) করুন",
+    titleBn: "Horizontal / Vertical Mirror",
     subtitle: "Horizontal / Vertical",
     category: "edit",
     badge: "Mirror",
     color: "rose",
-    description: "ছবিকে অনুভূমিক (Horizontal) বা উল্লম্ব (Vertical) ভাবে উল্টিয়ে দিন।"
+    description: "Mirror your image horizontally or vertically with instant browser-level processing."
   },
   {
     id: "round-corners",
     title: "Round Corners",
-    titleBn: "ছবির কোণা গোল করুন",
+    titleBn: "Rounded Border Effect",
     subtitle: "Rounded image corners",
     category: "edit",
     badge: "Styling",
     color: "amber",
-    description: "প্রোফাইল ছবি বা ব্যানারের জন্য ছবির চার কোণাকে স্মুথ কার্ভ বা গোল করুন।"
+    description: "Apply smooth curved corners to profile pictures, product cards, or website banners."
   },
   {
     id: "add-watermark",
     title: "Add Watermark",
-    titleBn: "ওয়াটারমার্ক যোগ করুন",
+    titleBn: "Security Text Watermark",
     subtitle: "Text watermark",
     category: "edit",
     badge: "Security",
     color: "blue",
-    description: "নথিপত্রে নিজের নাম বা 'Only for verification' টেক্সট ওয়াটারমার্ক হিসেবে বসান।"
+    description: "Protect sensitive identity documents with customizable text watermarks like 'Verified Copy'."
   },
   {
     id: "join-multiple-images",
     title: "Join Multiple Images",
-    titleBn: "একাধিক ছবি একত্রিত করুন",
+    titleBn: "Side by Side Collage",
     subtitle: "Horizontal / vertical join",
     category: "merge",
     badge: "Side by Side",
     color: "purple",
-    description: "দুটি বা ততোধিক ছবি পাশাপাশি (Horizontal) বা উপর-নিচে (Vertical) জুড়ে দিন।"
+    description: "Combine two or more images side-by-side horizontally or stacked vertically into a single image."
   },
   {
     id: "photo-signature-merge",
     title: "Photo + Signature Merge",
-    titleBn: "ছবি ও স্বাক্ষর একত্রীকরণ",
+    titleBn: "Single Application Frame",
     subtitle: "For online form",
     category: "merge",
     badge: "Exam Special",
     color: "emerald",
-    description: "আইবিপিএস বা ব্যাংক পরীক্ষার জন্য পাসপোর্ট ছবির নিচে স্বাক্ষর একই ফ্রেমে জোড়া লাগান।"
+    description: "Merge candidate photo and signature into a unified frame for IBPS, SBI, and banking exams."
   },
   {
     id: "resize-cm",
     title: "Resize in Centimeters",
-    titleBn: "সেন্টিমিটারে সাইজ নির্ধারণ",
+    titleBn: "Metric CM Dimension",
     subtitle: "CM + DPI",
     category: "resize",
     badge: "Precise",
     color: "teal",
-    description: "ছবির প্রস্থ ও উচ্চতা সরাসরি সেন্টিমিটার (cm) এবং প্রিন্ট DPI এককে মাপুন।"
+    description: "Set width and height directly in centimeters (cm) with tailored DPI print resolution."
   },
   {
     id: "resize-mm",
     title: "Resize in Millimeters",
-    titleBn: "মিলিমিটারে সাইজ নির্ধারণ",
+    titleBn: "Precise Millimeter Scale",
     subtitle: "MM + DPI",
     category: "resize",
     badge: "Millimeter",
     color: "pink",
-    description: "মিলিমিটার (mm) এককে আইডি কার্ড ও অফিশিয়াল সার্টিফিকেটের ছবি সাইজ করুন।"
+    description: "Calibrate photos in exact millimeters (mm) for smart ID badges and official certificates."
   },
   {
     id: "resize-inches",
     title: "Resize in Inches",
-    titleBn: "ইঞ্চিতে সাইজ নির্ধারণ",
+    titleBn: "Imperial Inch Scale",
     subtitle: "Inch + DPI",
     category: "resize",
     badge: "Inches",
     color: "blue",
-    description: "২x২ ইঞ্চি ইউএস ভিসা বা ফটো ফ্রেমের মাপে ছবি এক্সপোর্ট করুন।"
+    description: "Export photos formatted for standard 2x2 inch US Visa, passport, or photo frames."
   },
   {
     id: "convert-dpi",
     title: "Convert DPI",
-    titleBn: "ছবির DPI পরিবর্তন করুন",
+    titleBn: "High Resolution DPI",
     subtitle: "100 / 200 / 300 / 600 DPI",
     category: "dpi",
     badge: "Print Ready",
     color: "rose",
-    description: "প্রিন্ট ও অফিশিয়াল পোর্টালে গ্রহণযোগ্যতার জন্য ১০০, ২০০, ৩০০ বা ৬০০ DPI সেট করুন।"
+    description: "Recalibrate image DPI metadata to 100, 200, 300, or 600 DPI for high-definition print submission."
   },
   {
     id: "a4-image-size",
     title: "A4 Image Size",
-    titleBn: "A4 পেজ ইমেজ ফিট",
+    titleBn: "Standard A4 Sheet Fit",
     subtitle: "Resize for A4",
     category: "resize",
     badge: "A4 Page",
     color: "amber",
-    description: "স্ট্যান্ডার্ড A4 পেপারে প্রিন্ট করার জন্য ডকুমেন্ট সঠিকভাবে মাপমতো তৈরি করুন।"
+    description: "Fit documents and full-page certificates cleanly onto standard A4 paper dimensions."
   },
   {
     id: "pan-card-photo",
     title: "PAN Card Photo",
-    titleBn: "প্যান কার্ড ফটো সাইজ",
+    titleBn: "UTI & NSDL Specification",
     subtitle: "PSD-style output (213x213)",
     category: "exam",
     badge: "UTI / NSDL",
     color: "blue",
     defaultWidth: 213,
     defaultHeight: 213,
-    description: "ইউটিআইআইটিএসএল এবং এনএসডিএল প্যান কার্ড আবেদনের জন্য ২১৩x২১৩ পিক্সেল @ ৩০০ DPI।"
+    description: "Generate 213x213 pixel @ 300 DPI photos matching strict UTIITSL and NSDL PAN requirements."
   },
   {
     id: "ssc-photo-resize",
     title: "SSC Photo Resize",
-    titleBn: "SSC পরীক্ষার ফটো সাইজ",
+    titleBn: "Staff Selection Commission",
     subtitle: "Application photo",
     category: "exam",
     badge: "SSC CGL/CHSL",
     color: "purple",
     defaultWidth: 350,
     defaultHeight: 450,
-    description: "স্টাফ সিলেকশন কমিশন (SSC CGL, GD, CHSL, MTS) ফর্ম ফিলাপ সাইজ (২০-৫০ KB)।"
+    description: "Format application photos to standard 20-50 KB specs for SSC CGL, GD, CHSL, and MTS exams."
   },
   {
     id: "upsc-photo-resize",
     title: "UPSC Photo Resize",
-    titleBn: "UPSC ফটো ও সিগনেচার",
+    titleBn: "Civil Services Portal",
     subtitle: "Application photo",
     category: "exam",
     badge: "UPSC CSE",
     color: "emerald",
     defaultWidth: 350,
     defaultHeight: 350,
-    description: "ইউপিএসসি পরীক্ষার জন্য ৩৫০x৩৫০ পিক্সেল এবং ২০-৩০০ KB সাইজের ছবি প্রস্তুত করুন।"
+    description: "Format 350x350 pixel application photos within 20-300 KB for UPSC Civil Services applications."
   },
   {
     id: "social-media-resize",
     title: "Social Media Resize",
-    titleBn: "সোশ্যাল মিডিয়া পোস্ট সাইজ",
+    titleBn: "Optimized Social Canvas",
     subtitle: "Instagram / WhatsApp / YouTube",
     category: "social",
     badge: "Post & DP",
     color: "cyan",
-    description: "ইনস্টাগ্রাম পোস্ট (1:1), স্টোরি (9:16), ইউটিউব থাম্বনেইল (16:9) ও প্রোফাইল ডিপি।"
+    description: "Resize for Instagram Post (1:1), Story (9:16), YouTube Thumbnail (16:9), and WhatsApp DP."
   },
   {
     id: "favicon-generator",
     title: "Favicon Generator",
-    titleBn: "ওয়েবসাইট ফ্যাভিকন জেনারেটর",
+    titleBn: "Website Icon Pack",
     subtitle: "16 / 32 / 48 / 180 / 192px",
     category: "convert",
     badge: "Web Icons",
     color: "yellow",
-    description: "যেকোনো লোগো থেকে সব মাপের ওয়েবসাইট ফ্যাভিকন ও অ্যাপ আইকন তৈরি করুন।"
+    description: "Generate standard 16x16, 32x32, 48x48, 180x180, and 192x192 px website favicons and mobile app icons."
   },
   {
     id: "image-to-jpg",
     title: "Image to JPG",
-    titleBn: "ছবি থেকে JPG রূপান্তর",
+    titleBn: "Universal JPG Conversion",
     subtitle: "Convert to JPG",
     category: "convert",
     badge: "Fast JPG",
     color: "blue",
     targetFormat: "image/jpeg",
-    description: "PNG, WebP বা HEIC ছবিকে সরকারি ফর্ম সাপোর্ট উপযোগী খাঁটি JPG-তে রূপান্তর।"
+    description: "Convert PNG, WebP, or HEIC images into widely compatible JPG format for official form upload."
   },
   {
     id: "image-to-png",
     title: "Image to PNG",
-    titleBn: "ছবি থেকে PNG রূপান্তর",
+    titleBn: "Lossless PNG Format",
     subtitle: "Convert to PNG",
     category: "convert",
     badge: "Lossless",
     color: "rose",
     targetFormat: "image/png",
-    description: "উচ্চ স্বচ্ছতা ও মান বজায় রাখতে ছবিকে লসলেস PNG ফরম্যাটে কনভার্ট করুন।"
+    description: "Convert photos into lossless PNG format with crystal clear sharpness and transparency support."
   },
   {
     id: "image-to-webp",
     title: "Image to WebP",
-    titleBn: "ছবি থেকে WebP রূপান্তর",
+    titleBn: "Modern WebP Format",
     subtitle: "Convert to WebP",
     category: "convert",
     badge: "Ultra Small",
     color: "amber",
     targetFormat: "image/webp",
-    description: "সর্বাধুনিক অতি হালকা ও সুপার ফাস্ট WebP ফরম্যাটে ছবি রূপান্তর।"
+    description: "Convert photos into ultra-compact, bandwidth-efficient WebP images for fast website loading."
   },
   {
     id: "image-to-pdf",
     title: "Image to PDF",
-    titleBn: "ছবি থেকে PDF তৈরি",
+    titleBn: "Print-Ready PDF Document",
     subtitle: "Create PDF from image",
     category: "pdf",
     badge: "Print PDF",
     color: "blue",
-    description: "এক বা একাধিক ছবিকে সরকারি পোর্টালে আপলোডযোগ্য পরিষ্কার সিঙ্গেল PDF নথিতে রূপান্তর।"
+    description: "Convert one or more images into a clean single PDF document ready for official submission."
   },
   {
     id: "blur-image",
     title: "Blur Image",
-    titleBn: "ছবির সংবেদনশীল অংশ ব্লার",
+    titleBn: "Privacy Information Blur",
     subtitle: "Apply blur effect",
     category: "edit",
     badge: "Privacy",
     color: "purple",
-    description: "ডকুমেন্টের গোপন তথ্য, ফোন নম্বর বা আধার নম্বর ব্লার বা ঝাপসা করে ঢেকে দিন।"
+    description: "Conceal confidential information, phone numbers, or Aadhaar numbers with Gaussian blur."
   },
   {
     id: "pixelate-image",
     title: "Pixelate Image",
-    titleBn: "পিক্সেলেট (Pixelate) ফিল্টার",
+    titleBn: "Redaction Censor Filter",
     subtitle: "Apply pixelation",
     category: "edit",
     badge: "Censor",
     color: "emerald",
-    description: "নথিপত্রের গোপন ডেটা সেন্সর করার জন্য পিক্সেলেটেড ব্লকিং ফিল্টার প্রয়োগ করুন।"
+    description: "Apply a pixelated mosaic filter to censor sensitive data on public document shares."
   },
   {
     id: "grayscale-image",
     title: "Grayscale Image",
-    titleBn: "সাদা-কালো (Grayscale) ছবি",
+    titleBn: "Classic Monochrome Mode",
     subtitle: "Convert to grayscale",
     category: "edit",
     badge: "Black & White",
     color: "cyan",
-    description: "রঙিন ডকুমেন্ট বা ছবিকে পরিষ্কার ব্ল্যাক অ্যান্ড হোয়াইট / সাদা-কালোতে রূপান্তর।"
+    description: "Convert colored documents or portrait photos into high-contrast black-and-white images."
   }
 ];
 

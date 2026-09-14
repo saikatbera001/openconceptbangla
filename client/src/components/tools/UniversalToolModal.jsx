@@ -35,7 +35,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
   const [flipH, setFlipH] = useState(false);
   const [flipV, setFlipV] = useState(false);
   const [cornerRadius, setCornerRadius] = useState(24);
-  const [watermarkText, setWatermarkText] = useState('Open Concept Bangla');
+  const [watermarkText, setWatermarkText] = useState('e-tek solution');
   const [dpi, setDpi] = useState(300);
   const [format, setFormat] = useState(tool?.targetFormat || 'image/jpeg');
   const [blurAmount, setBlurAmount] = useState(4);
@@ -88,30 +88,28 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
     reader.readAsDataURL(file);
   };
 
-  // Main client-side processor
+  // Main tool processor
   const processTool = () => {
-    if (!imgObjRef.current) return;
-    setIsProcessing(true);
-
     const img = imgObjRef.current;
+    if (!img) return;
+
+    const toolId = tool?.id;
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-    const toolId = tool?.id || '';
 
-    // 1. Photo + Signature Merge
+    // 1. Photo & Signature Merge
     if (toolId === 'photo-signature-merge') {
-      const sigImg = secondImgObjRef.current;
       const cardW = 350;
-      const photoH = 350;
-      const sigH = 100;
-      const totalH = photoH + sigH + 20;
+      const photoH = 450;
+      const sigH = 120;
+      const totalH = photoH + sigH;
 
       canvas.width = cardW;
       canvas.height = totalH;
-      ctx.fillStyle = '#ffffff';
-      ctx.fillRect(0, 0, cardW, totalH);
 
       // Draw photo top
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, cardW, totalH);
       ctx.drawImage(img, 0, 0, cardW, photoH);
 
       // Divider line
@@ -120,13 +118,13 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
       ctx.strokeRect(0, 0, cardW, photoH);
 
       // Draw signature bottom
-      if (sigImg) {
-        ctx.drawImage(sigImg, 10, photoH + 10, cardW - 20, sigH);
+      if (secondImgObjRef.current) {
+        ctx.drawImage(secondImgObjRef.current, 10, photoH + 10, cardW - 20, sigH - 20);
       } else {
         ctx.fillStyle = '#94a3b8';
         ctx.font = '12px sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText('স্বাক্ষর আপলোড করুন (Upload Signature)', cardW / 2, photoH + 55);
+        ctx.fillText('Upload Signature Below', cardW / 2, photoH + 55);
       }
 
       ctx.strokeStyle = '#0f172a';
@@ -368,7 +366,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
                 </span>
               </div>
               <p className="text-xs text-slate-400 mt-0.5">
-                {tool?.titleBn} • {tool?.subtitle}
+                {tool?.subtitle}
               </p>
             </div>
           </div>
@@ -399,9 +397,9 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
               />
               <Upload className="w-7 h-7 text-emerald-600" />
               <p className="text-xs font-bold text-slate-800">
-                {imageSrc ? 'অন্য ছবি বাছাই করুন' : 'ছবি আপলোড করুন (Select Image)'}
+                {imageSrc ? 'Choose Another Image' : 'Upload Image (Select File)'}
               </p>
-              <span className="text-[10px] text-slate-400">JPG, PNG, WebP সমর্থিত</span>
+              <span className="text-[10px] text-slate-400">JPG, PNG, WebP supported</span>
             </div>
 
             {/* Second upload input for Merge or Join */}
@@ -419,18 +417,18 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
                 />
                 <Upload className="w-7 h-7 text-purple-600" />
                 <p className="text-xs font-bold text-slate-800">
-                  {secondImageSrc ? 'স্বাক্ষর / ২য় ছবি বদলান' : (tool?.id === 'photo-signature-merge' ? 'স্বাক্ষর আপলোড (Upload Signature)' : '২য় ছবি আপলোড (2nd Image)')}
+                  {secondImageSrc ? 'Change 2nd Image / Signature' : (tool?.id === 'photo-signature-merge' ? 'Upload Signature' : 'Upload 2nd Image')}
                 </p>
-                <span className="text-[10px] text-slate-400">দ্বিতীয় ফাইল নির্বাচন</span>
+                <span className="text-[10px] text-slate-400">Select second file</span>
               </div>
             ) : (
               <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-center">
                 <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-800 mb-1">
                   <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                  <span>১০০% অফলাইন ক্লায়েন্ট প্রসেসিং</span>
+                  <span>100% Offline Client Processing</span>
                 </div>
                 <p className="text-[11px] text-slate-500 leading-relaxed">
-                  সব প্রসেসিং আপনার ব্রাউজারে স্বয়ংক্রিয়ভাবে সম্পন্ন হয়। কোনো তথ্য সার্ভারে যায় না।
+                  All image processing happens securely inside your browser. No files or private data are sent to any server.
                 </p>
               </div>
             )}
@@ -444,7 +442,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
               {(tool?.category === 'compress' || tool?.id === 'reduce-image-kb' || tool?.id === 'increase-image-kb') && (
                 <div>
                   <div className="flex items-center justify-between text-xs font-bold text-slate-800 mb-2">
-                    <span>টার্গেট সাইজ (Target KB):</span>
+                    <span>Target Size (KB):</span>
                     <span className="text-emerald-700 font-mono text-sm">{targetKb} KB</span>
                   </div>
                   <input
@@ -478,7 +476,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="text-[11px] font-bold text-slate-600 block mb-1">
-                      প্রস্থ (Width px):
+                      Width (px):
                     </label>
                     <input
                       type="number"
@@ -489,7 +487,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
                   </div>
                   <div>
                     <label className="text-[11px] font-bold text-slate-600 block mb-1">
-                      উচ্চতা (Height px):
+                      Height (px):
                     </label>
                     <input
                       type="number"
@@ -510,7 +508,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
                     className="px-3.5 py-2 bg-white hover:bg-slate-100 border border-slate-200 rounded-xl text-xs font-bold flex items-center gap-1.5 transition"
                   >
                     <RotateCw className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>৯০° ঘোরান ({rotationAngle}°)</span>
+                    <span>Rotate 90° ({rotationAngle}°)</span>
                   </button>
                   <button
                     type="button"
@@ -520,7 +518,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
                     }`}
                   >
                     <FlipHorizontal className="w-3.5 h-3.5" />
-                    <span>ফ্লিপ হরিজন্টাল</span>
+                    <span>Flip Horizontal</span>
                   </button>
                   <button
                     type="button"
@@ -529,7 +527,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
                       flipV ? 'bg-emerald-600 text-white' : 'bg-white text-slate-700'
                     }`}
                   >
-                    <span>ফ্লিপ ভার্টিক্যাল</span>
+                    <span>Flip Vertical</span>
                   </button>
                 </div>
               )}
@@ -538,13 +536,13 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
               {tool?.id === 'add-watermark' && (
                 <div>
                   <label className="text-[11px] font-bold text-slate-600 block mb-1">
-                    ওয়াটারমার্ক টেক্সট:
+                    Watermark Text:
                   </label>
                   <input
                     type="text"
                     value={watermarkText}
                     onChange={(e) => setWatermarkText(e.target.value)}
-                    placeholder="আপনার নাম বা অফিসিয়াল নোট..."
+                    placeholder="e-tek solution or verified stamp..."
                     className="w-full px-3 py-2 text-xs font-bold bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                   />
                 </div>
@@ -554,7 +552,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
               {tool?.id === 'round-corners' && (
                 <div>
                   <div className="flex items-center justify-between text-xs font-bold text-slate-800 mb-1">
-                    <span>কোণার ব্যাসার্ধ (Corner Radius):</span>
+                    <span>Corner Radius:</span>
                     <span className="font-mono text-emerald-700">{cornerRadius}px</span>
                   </div>
                   <input
@@ -571,7 +569,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
               {/* Join Direction */}
               {tool?.id === 'join-multiple-images' && (
                 <div className="flex items-center gap-3">
-                  <span className="text-xs font-bold text-slate-700">জোড়ার অভিমুখ:</span>
+                  <span className="text-xs font-bold text-slate-700">Join Layout:</span>
                   <button
                     type="button"
                     onClick={() => setJoinDirection('horizontal')}
@@ -579,7 +577,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
                       joinDirection === 'horizontal' ? 'bg-emerald-600 text-white' : 'bg-white'
                     }`}
                   >
-                    পাশাপাশি (Horizontal)
+                    Side by Side (Horizontal)
                   </button>
                   <button
                     type="button"
@@ -588,7 +586,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
                       joinDirection === 'vertical' ? 'bg-emerald-600 text-white' : 'bg-white'
                     }`}
                   >
-                    উপর-নিচে (Vertical)
+                    Stacked (Vertical)
                   </button>
                 </div>
               )}
@@ -597,7 +595,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
               {tool?.id === 'blur-image' && (
                 <div>
                   <div className="flex items-center justify-between text-xs font-bold text-slate-800 mb-1">
-                    <span>ব্লার তীব্রতা (Blur Intensity):</span>
+                    <span>Blur Intensity:</span>
                     <span className="font-mono">{blurAmount}px</span>
                   </div>
                   <input
@@ -614,7 +612,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
               {tool?.id === 'pixelate-image' && (
                 <div>
                   <div className="flex items-center justify-between text-xs font-bold text-slate-800 mb-1">
-                    <span>পিক্সেলেট ব্লক সাইজ:</span>
+                    <span>Pixelate Block Size:</span>
                     <span className="font-mono">{pixelateSize}px</span>
                   </div>
                   <input
@@ -637,7 +635,7 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
               <div className="flex items-center justify-between text-xs font-bold text-slate-700">
                 <span className="flex items-center gap-1.5 text-emerald-800">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                  প্রিভিউ তৈরি হয়েছে (Live Result)
+                  Live Result Preview Ready
                 </span>
                 <span className="font-mono bg-emerald-100 text-emerald-900 px-2 py-0.5 rounded">
                   {resultSizeKb} KB
@@ -656,11 +654,11 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
               <div className="flex items-center gap-3">
                 <a
                   href={resultUrl}
-                  download={`openconcept_${tool?.id || 'tool'}_${fileName || 'result'}.${tool?.id === 'round-corners' ? 'png' : 'jpg'}`}
+                  download={`etek_${tool?.id || 'tool'}_${fileName || 'result'}.${tool?.id === 'round-corners' ? 'png' : 'jpg'}`}
                   className="w-full py-3 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-emerald-700/20 transition"
                 >
                   <Download className="w-4 h-4" />
-                  <span>রেজাল্ট ডাউনলোড করুন ({resultSizeKb} KB)</span>
+                  <span>Download Result ({resultSizeKb} KB)</span>
                 </a>
               </div>
             </div>
@@ -670,12 +668,12 @@ export default function UniversalToolModal({ tool, initialKb, onClose }) {
 
         {/* Footer */}
         <div className="bg-slate-50 px-6 py-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-          <span>Open Concept Bangla • Private Offline Suite</span>
+          <span>e-tek solution • Fast Client-Side Tool Suite</span>
           <button
             onClick={onClose}
             className="font-bold text-slate-600 hover:text-slate-900"
           >
-            বন্ধ করুন (Close)
+            Close
           </button>
         </div>
 

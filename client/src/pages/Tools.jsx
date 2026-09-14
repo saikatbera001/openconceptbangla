@@ -145,13 +145,13 @@ export default function Tools() {
           <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xl space-y-4">
             <div className="flex items-center justify-between border-b pb-4">
               <span className="text-sm font-bold text-slate-800">
-                এক্টিভ ডেডিকেটেড টুল ওয়ার্কস্পেস:
+                Active Dedicated Tool Workspace:
               </span>
               <button
                 onClick={() => setActiveDedicatedTab(null)}
-                className="text-xs font-bold text-rose-600 hover:text-rose-700 bg-rose-50 px-3 py-1 rounded-xl"
+                className="text-xs font-bold text-rose-600 hover:text-rose-700 bg-rose-50 px-3 py-1 rounded-xl transition"
               >
-                ট্যাব বন্ধ করুন ✕
+                Close Tab ✕
               </button>
             </div>
             {activeDedicatedTab === 'cropper' && <CardCropper initialPresetId={dedicatedPreset} />}
@@ -160,7 +160,7 @@ export default function Tools() {
           </div>
         )}
 
-        {/* 3. Search a tool... input bar matching Screenshot 2 */}
+        {/* 3. Search a tool... input bar */}
         <div className="bg-white rounded-2xl shadow-lg border border-slate-200/90 p-3 sm:p-4">
           <div className="relative">
             <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
@@ -169,7 +169,7 @@ export default function Tools() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search a tool (e.g. Passport, Compress KB, Signature, DPI, Crop, Rotate, Watermark)..."
-              className="w-full pl-12 pr-4 py-3 text-sm sm:text-base bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition placeholder-slate-400 font-medium"
+              className="w-full pl-12 pr-4 py-3 text-sm sm:text-base bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition placeholder-slate-400 font-medium font-sans"
             />
             {searchTerm && (
               <button
@@ -182,13 +182,13 @@ export default function Tools() {
           </div>
         </div>
 
-        {/* 4. Grid of 30+ Interactive Tools matching Screenshot 2 */}
+        {/* 4. Grid of 30+ Interactive Tools */}
         <div>
-          <div className="flex items-center justify-between mb-5 text-xs text-slate-500">
-            <span>সবগুলো টুলস (মোট <strong>{filteredTools.length}</strong> টি ব্রাউজার টুল)</span>
+          <div className="flex items-center justify-between mb-5 text-xs text-slate-500 font-sans">
+            <span>All Available Tools (Total <strong>{filteredTools.length}</strong> Browser Utilities)</span>
             <span className="flex items-center gap-1 text-emerald-700 font-bold">
               <ShieldCheck className="w-4 h-4" />
-              ১০০% ক্লায়েন্ট সাইড • নো সার্ভার আপলোড
+              100% Client-Side • Zero Server Upload
             </span>
           </div>
 
@@ -200,7 +200,7 @@ export default function Tools() {
                 <div
                   key={tool.id}
                   onClick={() => handleToolClick(tool)}
-                  className="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-200 cursor-pointer flex flex-col justify-between group"
+                  className="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-200 cursor-pointer flex flex-col justify-between group font-sans"
                 >
                   <div className="flex items-start gap-3">
                     <div className={`w-10 h-10 rounded-xl ${colorCls} flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 transition-transform`}>
@@ -219,10 +219,10 @@ export default function Tools() {
 
                   <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-amber-700 group-hover:text-amber-800">
                     <span className="text-[10px] text-slate-400 font-normal truncate">
-                      {tool.titleBn}
+                      {tool.titleBn || tool.category}
                     </span>
                     <span className="flex items-center gap-1 shrink-0">
-                      খুলুন <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                      Open Tool <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                     </span>
                   </div>
                 </div>
@@ -231,15 +231,15 @@ export default function Tools() {
           </div>
         </div>
 
-        {/* 5. Exact Target Size Compression Quick Pills matching Screenshot 2 */}
-        <div className="p-5 sm:p-6 bg-gradient-to-r from-amber-50/70 via-orange-50/60 to-yellow-50/70 rounded-3xl border border-amber-200/80 space-y-3">
+        {/* 5. Exact Target Size Compression Quick Pills */}
+        <div className="p-5 sm:p-6 bg-gradient-to-r from-amber-50/70 via-orange-50/60 to-yellow-50/70 rounded-3xl border border-amber-200/80 space-y-3 font-sans">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
             <span className="text-xs font-black text-slate-900 uppercase tracking-wide flex items-center gap-1.5">
               <Sliders className="w-4 h-4 text-amber-600" />
               <span>Exact Target Size Compression:</span>
             </span>
             <span className="text-[11px] text-slate-500">
-              যেকোনো KB পিল-এ ক্লিক করে তাত্ক্ষণিক ছবি কম্প্রেস করুন
+              Click any KB preset to instantly compress image
             </span>
           </div>
 
@@ -250,19 +250,20 @@ export default function Tools() {
                 key={p.kb}
                 type="button"
                 onClick={() => handleKbPillClick(p.kb)}
-                className="px-3 py-1.5 bg-white hover:bg-amber-500 hover:text-white border border-amber-300 text-slate-800 text-xs font-bold rounded-xl shadow-sm transition hover:scale-105 active:scale-95"
+                className="px-3 py-1.5 bg-white hover:bg-amber-500 hover:text-white border border-amber-300 text-slate-800 text-xs font-bold rounded-xl shadow-sm transition hover:scale-105 active:scale-95 font-sans"
               >
                 {p.label}
               </button>
             ))}
           </div>
 
-          {/* Trust guarantee subtext matching Screenshot 2 */}
-          <p className="text-[11px] text-slate-500 pt-2 border-t border-amber-200/60 flex items-center gap-1.5">
+          {/* Trust guarantee subtext */}
+          <p className="text-[11px] text-slate-500 pt-2 border-t border-amber-200/60 flex items-center gap-1.5 font-sans">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span>All tools run browser side / local processing ensure maximum speed & privacy (zero server upload).</span>
+            <span>All tools run browser side / local processing to ensure maximum speed & privacy (zero server upload).</span>
           </p>
         </div>
+
 
       </div>
 

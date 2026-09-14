@@ -194,7 +194,7 @@ export default function StudioTool() {
     printWindow.document.write(`
       <html>
         <head>
-          <title>Passport Photo Print Sheet - Open Concept Bangla</title>
+          <title>Passport Photo Print Sheet - e-tek solution</title>
           <style>
             @page { margin: 0; size: auto; }
             body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; background: white; }
@@ -210,7 +210,7 @@ export default function StudioTool() {
   };
 
   return (
-    <div className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden mb-12">
+    <div className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden mb-12 font-sans">
       {/* Studio Banner Header */}
       <div className="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 p-6 sm:p-7 text-white flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-4">
@@ -264,17 +264,17 @@ export default function StudioTool() {
               </div>
               <div>
                 <h3 className="text-base font-bold text-slate-800">
-                  {imageSrc ? 'অন্য ছবি পরিবর্তন করতে ক্লিক করুন' : 'Upload Passport Size Photo'}
+                  {imageSrc ? 'Click to change photo' : 'Upload Passport Size Photo'}
                 </h3>
                 <p className="text-xs text-slate-500 mt-1">
-                  JPG / PNG / WebP — 3.5x4.5 cm অটো কাট ও সেন্টারিং সাপোর্ট
+                  JPG / PNG / WebP — 3.5x4.5 cm auto crop & centering support
                 </p>
               </div>
               <button
                 type="button"
                 className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow transition"
               >
-                {imageSrc ? 'ছবি বদলান' : 'ছবি নির্বাচন করুন'}
+                {imageSrc ? 'Change Photo' : 'Select Photo'}
               </button>
             </div>
 
@@ -283,7 +283,7 @@ export default function StudioTool() {
               <div className="flex items-center justify-between mb-2.5">
                 <label className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
                   <Layers className="w-3.5 h-3.5 text-indigo-600" />
-                  <span>প্রিন্ট শিট লেআউট নির্বাচন করুন:</span>
+                  <span>Select Print Sheet Layout:</span>
                 </label>
                 <span className="text-[11px] text-slate-400 font-mono">
                   {selectedLayout.paper.toUpperCase()}
@@ -324,7 +324,7 @@ export default function StudioTool() {
                   className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
                 />
                 <Scissors className="w-3.5 h-3.5 text-slate-400" />
-                <span>কাটিং বর্ডার ও মার্কস (Cut Lines)</span>
+                <span>Cutting Lines & Margins</span>
               </label>
 
               <label className="flex items-center gap-2 text-xs font-semibold text-slate-600 cursor-pointer select-none">
@@ -334,13 +334,13 @@ export default function StudioTool() {
                   onChange={(e) => setPhotoBorder(e.target.checked)}
                   className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
                 />
-                <span>পাতলা সীমানা রেখা (Thin Border)</span>
+                <span>Thin Border Line</span>
               </label>
             </div>
 
             {/* Helper Specs text */}
             <div className="p-3 bg-slate-50 rounded-xl text-[11px] text-slate-500 leading-relaxed border border-slate-200/70">
-              💡 <strong>টিপস:</strong> 4x6 ইঞ্চি গ্লসি বা ম্যাট ফটো পেপারে প্রিন্ট করার জন্য <strong>6 Photos</strong> অথবা <strong>12 Photos</strong> সবচেয়ে আদর্শ। A4 পেপারে সর্বোচ্চ ৩২টি ফটো একবারে নিখুঁতভাবে প্রিন্ট করা যায়।
+              💡 <strong>Tips:</strong> For 4x6 inch glossy or matte photo paper, <strong>6 Photos</strong> or <strong>12 Photos</strong> is ideal. A4 sheets print up to 32 photos in one pass.
             </div>
           </div>
 
@@ -349,7 +349,7 @@ export default function StudioTool() {
             <div className="w-full flex items-center justify-between text-xs text-slate-400 pb-3 border-b border-slate-800">
               <span className="flex items-center gap-1.5 font-bold text-slate-200">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                Photo Sheet Live Dark Canvas Preview
+                Photo Sheet Live Canvas Preview
               </span>
               <span className="text-[11px] font-mono text-slate-400">
                 {selectedLayout.name} ({selectedLayout.paper.toUpperCase()})
@@ -371,10 +371,10 @@ export default function StudioTool() {
                     <Camera className="w-6 h-6" />
                   </div>
                   <p className="text-xs font-semibold text-slate-400">
-                    Photo upload kore enter preview wet see
+                    Upload photo to see live sheet preview
                   </p>
                   <p className="text-[11px] text-slate-600 mt-1 max-w-xs">
-                    বামদিকের বক্সে পাসপোর্ট ছবি আপলোড করলে লাইভ শিট অটোমেটিক তৈরি হয়ে যাবে।
+                    Upload a passport photo on the left to automatically generate the printable photo sheet.
                   </p>
                 </div>
               )}
@@ -388,7 +388,7 @@ export default function StudioTool() {
                 className="w-full sm:w-1/2 py-2.5 px-4 bg-slate-800 hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition"
               >
                 <Printer className="w-4 h-4 text-amber-300" />
-                <span>সরাসরি প্রিন্ট (Print)</span>
+                <span>Direct Print Sheet</span>
               </button>
 
               <a
@@ -401,7 +401,7 @@ export default function StudioTool() {
                 }`}
               >
                 <Download className="w-4 h-4" />
-                <span>300 DPI শিট ডাউনলোড</span>
+                <span>Download 300 DPI Sheet</span>
               </a>
             </div>
 
@@ -413,3 +413,4 @@ export default function StudioTool() {
     </div>
   );
 }
+
