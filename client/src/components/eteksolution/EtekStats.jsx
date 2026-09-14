@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Users, CheckCircle } from 'lucide-react';
+import { getAssetUrl } from '../../utils/assetUrl';
 
 export default function EtekStats() {
   const stats = [
@@ -66,7 +67,7 @@ export default function EtekStats() {
           <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
             <div className="relative w-20 h-20 rounded-2xl overflow-hidden bg-amber-400 border-2 border-amber-300 shadow-xl flex-shrink-0">
               <img 
-                src="/images/eteksolution/tanmoy-santra.png" 
+                src={getAssetUrl('/images/eteksolution/tanmoy-santra.png')} 
                 alt="Mr. Tanmoy Santra" 
                 className="w-full h-full object-cover object-top"
               />

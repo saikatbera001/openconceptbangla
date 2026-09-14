@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MessageSquare, ExternalLink, Clock, ShieldCheck, CheckCircle2, Sparkles } from 'lucide-react';
+import { getAssetUrl } from '../../utils/assetUrl';
 
 export default function EtekHero({ onServiceClick }) {
   // Live Clock State
@@ -80,7 +81,7 @@ export default function EtekHero({ onServiceClick }) {
           {/* Background image overlay */}
           <div 
             className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-luminosity pointer-events-none"
-            style={{ backgroundImage: `url('/images/eteksolution/hero-skyline-bg.png')` }}
+            style={{ backgroundImage: `url(${getAssetUrl('/images/eteksolution/hero-skyline-bg.png')})` }}
           />
           
           <div className="relative z-10 p-6 md:p-8 flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -88,7 +89,7 @@ export default function EtekHero({ onServiceClick }) {
             <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-4 max-w-sm">
               <div className="flex items-center gap-3">
                 <img 
-                  src="/images/eteksolution/whatsapp-b-icon.png" 
+                  src={getAssetUrl('/images/eteksolution/whatsapp-b-icon.png')} 
                   alt="WhatsApp Business" 
                   className="w-14 h-14 rounded-2xl shadow-lg border border-emerald-400/30 hover:scale-105 transition-transform"
                 />
@@ -122,7 +123,7 @@ export default function EtekHero({ onServiceClick }) {
             <div className="flex flex-col items-center justify-center">
               <div className="relative w-44 h-44 sm:w-56 sm:h-56 rounded-full p-2 bg-gradient-to-b from-amber-400 via-yellow-200 to-amber-500 shadow-2xl hover:scale-105 transition-transform duration-500 cursor-pointer">
                 <img 
-                  src="/images/eteksolution/annapurna-bhandar.png" 
+                  src={getAssetUrl('/images/eteksolution/annapurna-bhandar.png')} 
                   alt="অন্নপূর্ণা ভাণ্ডার"
                   className="w-full h-full object-contain rounded-full bg-white"
                 />
@@ -133,7 +134,7 @@ export default function EtekHero({ onServiceClick }) {
             {/* Right: Aadhaar Card Service Poster */}
             <div className="w-full sm:w-auto max-w-sm rounded-2xl overflow-hidden shadow-2xl border-2 border-purple-400/40 hover:scale-105 transition-transform duration-300 bg-purple-950">
               <img 
-                src="/images/eteksolution/aadhaar-poster.png" 
+                src={getAssetUrl('/images/eteksolution/aadhaar-poster.png')} 
                 alt="আধার কার্ডের কাজের জন্য যোগাযোগ করুন" 
                 className="w-full h-auto object-contain"
               />

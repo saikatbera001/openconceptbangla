@@ -10,6 +10,7 @@ import {
   MessageCircle,
   Wrench
 } from 'lucide-react';
+import { getAssetUrl } from '../../utils/assetUrl';
 
 
 export default function EtekNavbar({ onOpenPrintModal, onOpenSearchModal }) {
@@ -90,12 +91,12 @@ export default function EtekNavbar({ onOpenPrintModal, onOpenSearchModal }) {
         >
           <div className="relative h-12 px-2.5 py-1 rounded-xl bg-slate-900 shadow-sm border border-slate-700 flex items-center justify-center group-hover:scale-105 transition-transform">
             <img 
-              src="/images/eteksolution/logo-transparent.png" 
+              src={getAssetUrl('/images/eteksolution/logo-transparent.png')} 
               alt="e-tek solution logo"
               className="h-9 w-auto object-contain"
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.src = "/images/eteksolution/logo.png";
+                e.target.src = getAssetUrl('/images/eteksolution/logo.png');
               }}
             />
           </div>

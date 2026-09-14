@@ -6,6 +6,7 @@ import {
   ShieldCheck, 
   ExternalLink
 } from 'lucide-react';
+import { getAssetUrl } from '../../utils/assetUrl';
 
 export default function EtekFooter() {
   const scrollToTop = () => {
@@ -23,12 +24,12 @@ export default function EtekFooter() {
             <div className="flex items-center gap-3 mb-4">
               <div className="h-10 px-2.5 py-0.5 rounded-xl overflow-hidden shadow-sm bg-slate-900 border border-slate-800 flex items-center justify-center">
                 <img 
-                  src="/images/eteksolution/logo-transparent.png" 
+                  src={getAssetUrl('/images/eteksolution/logo-transparent.png')} 
                   alt="e-tek solution logo"
                   className="h-8 w-auto object-contain"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/images/eteksolution/logo.png";
+                    e.target.src = getAssetUrl('/images/eteksolution/logo.png');
                   }}
                 />
               </div>
@@ -73,7 +74,7 @@ export default function EtekFooter() {
                 className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500 hover:scale-110 transition-all shadow-xs"
                 title="WhatsApp Channel"
               >
-                <img src="/images/eteksolution/whatsapp-b-icon.png" alt="WhatsApp Link" className="w-5 h-5 rounded-full" />
+                <img src={getAssetUrl('/images/eteksolution/whatsapp-b-icon.png')} alt="WhatsApp Link" className="w-5 h-5 rounded-full" />
               </a>
 
               {/* YouTube */}

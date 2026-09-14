@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Pause, Play, Images } from 'lucide-react';
+import { getAssetUrl } from '../../utils/assetUrl';
 
 const CAROUSEL_SLIDES = [
   {
@@ -134,12 +135,12 @@ export default function EtekCarousel() {
               }`}
             >
               <img
-                src={slide.url}
+                src={getAssetUrl(slide.url)}
                 alt={slide.caption}
                 className="w-full h-full object-contain p-2 sm:p-4 bg-slate-950"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "/images/eteksolution/featured-banner.png";
+                  e.target.src = getAssetUrl("/images/eteksolution/featured-banner.png");
                 }}
               />
               

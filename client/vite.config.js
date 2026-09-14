@@ -2,9 +2,9 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: './',
+  base: process.env.VITE_BASE || (command === 'build' ? '/openconceptbangla/' : '/'),
   server: {
     proxy: {
       '/api': {
@@ -13,4 +13,4 @@ export default defineConfig({
       },
     },
   },
-})
+}))

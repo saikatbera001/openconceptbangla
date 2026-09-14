@@ -5,6 +5,7 @@ import {
   Search 
 } from 'lucide-react';
 import EtekServiceModal from './EtekServiceModal';
+import { getAssetUrl } from '../../utils/assetUrl';
 
 export const PRIMARY_SERVICES = [
   {
@@ -205,7 +206,7 @@ export default function EtekServicesGrid() {
                 {/* Image Container */}
                 <div className="relative h-48 bg-white border-b border-slate-100 overflow-hidden flex items-center justify-center p-3">
                   <img 
-                    src={service.image} 
+                    src={getAssetUrl(service.image)} 
                     alt={service.title} 
                     className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-300 drop-shadow-xs"
                     onError={(e) => {

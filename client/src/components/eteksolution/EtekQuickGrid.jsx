@@ -7,6 +7,7 @@ import {
   FileText,
   ChevronRight
 } from 'lucide-react';
+import { getAssetUrl } from '../../utils/assetUrl';
 
 export default function EtekQuickGrid({ onOpenPrintModal }) {
   const [activeDownloadModal, setActiveDownloadModal] = useState(false);
@@ -111,7 +112,7 @@ export default function EtekQuickGrid({ onOpenPrintModal }) {
         {/* Promotional Banner Card (Section 11) */}
         <div className="mb-12 rounded-3xl overflow-hidden shadow-xl border border-amber-300/60 bg-amber-400 group hover:shadow-2xl transition-all duration-300">
           <img 
-            src="/images/eteksolution/featured-banner.png"
+            src={getAssetUrl('/images/eteksolution/featured-banner.png')}
             alt="Etek Solution citizen services promotion"
             className="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-500"
           />

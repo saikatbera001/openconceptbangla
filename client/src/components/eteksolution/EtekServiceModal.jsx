@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, CheckCircle, MessageSquare, Phone, FileCheck, ArrowRight, ShieldCheck } from 'lucide-react';
+import { getAssetUrl } from '../../utils/assetUrl';
 
 export default function EtekServiceModal({ service, onClose }) {
   if (!service) return null;
@@ -18,7 +19,7 @@ export default function EtekServiceModal({ service, onClose }) {
         {/* Header with image */}
         <div className="relative bg-slate-50 border-b border-slate-100 h-48 overflow-hidden flex items-center justify-center">
           <img 
-            src={service.image} 
+            src={getAssetUrl(service.image)} 
             alt={service.title} 
             className="w-full h-full object-contain p-4 drop-shadow-xs"
           />
